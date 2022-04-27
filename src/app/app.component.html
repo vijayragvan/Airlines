@@ -1,0 +1,73 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+  Flight Ticket Booking
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <!-- <img
+      class="avatar mat-elevation-z8"
+      src="https://source.unsplash.com/c_GmwfHBDzk/200x200"
+    />
+
+    <h4 class="name">John Smith</h4>
+    <p class="designation">Software Engineer</p>
+
+    <mat-divider></mat-divider> -->
+
+    <button mat-button class="menu-button" routerLink="/home">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/tickets">
+      <mat-icon>event</mat-icon>
+      <span>View Tickets</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/bookings" [queryParams] = "{role:'ADMIN'}">
+      <mat-icon>receipt</mat-icon>
+      <span>Ticket Request</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/bookings">
+      <mat-icon>receipt</mat-icon>
+      <span>View Bookings</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/upload">
+      <mat-icon>receipt</mat-icon>
+      <span>Upload Ticket</span>
+    </button>
+
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button" routerLink="/profile">
+      <mat-icon>person</mat-icon>
+      <span>Profile</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/about">
+      <mat-icon>info</mat-icon>
+      <span>About</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/help">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/login">
+      <mat-icon>help</mat-icon>
+      <span>Login</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/register">
+      <mat-icon>help</mat-icon>
+      <span>Register</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

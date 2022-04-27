@@ -1,0 +1,29 @@
+
+
+<mat-card class = "m-2">
+    <div class="h3">Chennai</div>
+    <mat-divider></mat-divider>
+    <div class="mt-4">
+    <button routerLink="/search" [queryParams] = "{from:'MAA',to:'HYD'}" class = "m-2" mat-stroked-button>MAA - HYD</button>
+    <button routerLink="/search" [queryParams] = "{from:'MAA',to:'BLR'}" class = "m-2" mat-stroked-button>MAA - BLR</button>
+    <button routerLink="/search" [queryParams] = "{from:'MAA',to:'IBX'}" class = "m-2" mat-stroked-button>MAA - IBX</button>
+</div>
+</mat-card>
+<mat-card class = "m-2">
+    <div class="h3">Kerala</div>
+    <mat-divider></mat-divider>
+    <div class="mt-4">
+    <button routerLink="/search" [queryParams] = "{from:'COK',to:'BLR'}" class = "m-2" mat-stroked-button>COK - BLR</button>
+    <button routerLink="/search" [queryParams] = "{from:'COK',to:'MAA'}" class = "m-2" mat-stroked-button>COK - MAA</button>
+    <button routerLink="/search" [queryParams] = "{from:'COK',to:'HYD'}" class = "m-2" mat-stroked-button>COK - HYD</button>
+</div>
+</mat-card>
+<mat-card class = "m-2">
+    <div class="h3">Bangalore</div>
+    <mat-divider></mat-divider>
+    <div class="mt-4">
+    <button routerLink="/search" [queryParams] = "{from:'BLR',to:'MAA'}" class = "m-2" mat-stroked-button>BLR - MAA</button>
+    <button routerLink="/search" [queryParams] = "{from:'BLR',to:'COK'}" class = "m-2" mat-stroked-button>BLR - COK</button>
+    <button routerLink="/search" [queryParams] = "{from:'BLR',to:'HYD'}" class = "m-2" mat-stroked-button>BLR - HYD</button>
+</div>
+</mat-card>

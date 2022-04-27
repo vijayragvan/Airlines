@@ -1,0 +1,85 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+    
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <!-- <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container> -->
+      
+        <!-- Name Column -->
+        <!-- <ng-container matColumnDef="source">
+          <th mat-header-cell *matHeaderCellDef> source </th>
+          <td mat-cell *matCellDef="let element"> {{element.source}} <br/>
+            Terminal - {{element.sourceTerminal}}</td>
+        </ng-container> -->
+    
+         <!-- Symbol Column -->
+         <!-- <ng-container matColumnDef="sourceTerminal">
+            <th mat-header-cell *matHeaderCellDef> Terminal </th>
+            <td mat-cell *matCellDef="let element"> {{element.sourceTerminal}} </td>
+          </ng-container> -->
+      
+        <!-- Weight Column -->
+        <!-- <ng-container matColumnDef="destination">
+          <th mat-header-cell *matHeaderCellDef> destination </th>
+          <td mat-cell *matCellDef="let element"> {{element.destination}} <br/>
+            Terminal - {{element.destinationTerminal}}</td>
+        </ng-container> -->
+    
+        <!-- Symbol Column -->
+        <!-- <ng-container matColumnDef="destinationTerminal">
+            <th mat-header-cell *matHeaderCellDef> Terminal </th>
+            <td mat-cell *matCellDef="let element"> {{element.destinationTerminal}} </td>
+            </ng-container> -->
+            <!-- Symbol Column -->
+        <ng-container matColumnDef="airline">
+            <th mat-header-cell *matHeaderCellDef> Airline </th>
+            <td mat-cell *matCellDef="let element"> {{element.airline}} <br/>{{element.flightNumber}}</td>
+          </ng-container>
+              <!-- Symbol Column -->
+        <!-- <ng-container matColumnDef="flightNumber">
+            <th mat-header-cell *matHeaderCellDef> flightNumber </th>
+            <td mat-cell *matCellDef="let element"> {{element.flightNumber}} </td>
+          </ng-container> -->
+              <!-- Symbol Column -->
+        <ng-container matColumnDef="departureTime">
+            <th mat-header-cell *matHeaderCellDef> Departure </th>
+            <td mat-cell *matCellDef="let element"> {{element.departureTime | date:'shortTime'}} <br/>
+              {{element.source}} <br/>
+              {{element.departureTime | date}}<br/>
+            Terminal - {{element.sourceTerminal}} </td>
+          </ng-container>
+              <!-- Symbol Column -->
+        <ng-container matColumnDef="arrivalTime">
+            <th mat-header-cell *matHeaderCellDef> Arrival </th>
+            <td mat-cell *matCellDef="let element"> {{element.arrivalTime |date:'shortTime'}}<br/>
+              {{element.destination}} <br/>
+              {{element.arrivalTime | date}}<br/>
+              Terminal - {{element.destinationTerminal}}
+             </td>
+          </ng-container>
+          <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> Price Ser Seat </th>
+            <td mat-cell *matCellDef="let element"> INR {{element.price}}  </td>
+          </ng-container>
+          <ng-container matColumnDef="seat">
+            <th mat-header-cell *matHeaderCellDef> Seat </th>
+            <td mat-cell *matCellDef="let element"> 
+              <button routerLink="/search" [queryParams] = "{from:'MAA',to:'IBX'}" class = "m-2" mat-stroked-button color="primary">Book</button>
+              <br/>
+              Seat Left: {{element.seat}} 
+            </td>
+          </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons 
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
+    </div>
+    
