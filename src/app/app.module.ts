@@ -27,10 +27,12 @@ import { SearchTicketsComponent } from './pages/search-tickets/search-tickets.co
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { TicketUploadComponent } from './pages/ticket-upload/ticket-upload.component';
-
+import { BookTicketComponent } from './pages/book-ticket/book-ticket.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ProfileComponent, AboutComponent, HelpComponent, NotFoundComponent, BookingsListComponent, SearchTicketsComponent,TicketListComponent, LoginComponent, RegisterComponent, TicketUploadComponent],
+  declarations: [AppComponent, HomeComponent, ProfileComponent, AboutComponent, HelpComponent, NotFoundComponent, BookingsListComponent, SearchTicketsComponent,TicketListComponent, LoginComponent, RegisterComponent, TicketUploadComponent, BookTicketComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -46,7 +48,10 @@ import { TicketUploadComponent } from './pages/ticket-upload/ticket-upload.compo
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

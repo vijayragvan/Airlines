@@ -73,7 +73,7 @@
             <th mat-header-cell *matHeaderCellDef> Seat </th>
             <td mat-cell *matCellDef="let element"> 
               <!-- <button routerLink="/search" [queryParams] = "{from:'MAA',to:'IBX'}" class = "m-2" mat-stroked-button color="primary">Book</button> -->
-              <button routerLink="/search" [queryParams] = "{from:'MAA',to:'IBX'}" type="button" class="btn btn-primary">Book</button>
+              <button routerLink="/bookNow" [queryParams] = "{from:'MAA',to:'IBX'}" type="button" class="btn btn-primary">Book</button>
               <div class="text-warning">
               Seat Left: {{element.seat}} 
               </div>
