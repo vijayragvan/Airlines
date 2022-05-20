@@ -1,13 +1,12 @@
 {
     "request": {
-        "method": "GET",
+        "method": "PUT",
         "url": "/api/users"
     },
     "response": {
         "status": 200,
         "bodyFileName": "userList.json",
         "headers": {
-            
             "Content-Type" : "application/json",
  "Access-Control-Allow-Origin" : "*",
  "Access-Control-Allow-Methods" : "*",
@@ -15,6 +14,7 @@
  "X-Content-Type-Options" : "nosniff",
  "x-frame-options" : "DENY",
  "x-xss-protection" : "1; mode=block"
+
         }
     }
 }

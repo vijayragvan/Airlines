@@ -30,11 +30,24 @@ import { TicketUploadComponent } from './pages/ticket-upload/ticket-upload.compo
 import { BookTicketComponent } from './pages/book-ticket/book-ticket.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
+import { ManageUsersComponent } from "./pages/manage-users/manage-users.component";
+import { UserAddComponent } from "./pages/manage-users/user-add/user-add.component";
+import { UserDetailsComponent } from "./pages/manage-users/user-details/user-details.component";
+import { UserListComponent } from "./pages/manage-users/user-list/user-list.component";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ProfileComponent, AboutComponent, HelpComponent, NotFoundComponent, BookingsListComponent, SearchTicketsComponent,TicketListComponent, LoginComponent, RegisterComponent, TicketUploadComponent, BookTicketComponent],
+  declarations: [AppComponent, HomeComponent, ProfileComponent, AboutComponent, HelpComponent, NotFoundComponent, BookingsListComponent, SearchTicketsComponent,TicketListComponent, LoginComponent, RegisterComponent, TicketUploadComponent, BookTicketComponent,
+    ManageUsersComponent,
+    UserAddComponent,
+    UserDetailsComponent,
+    UserListComponent,],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -52,6 +65,7 @@ import {MatRadioModule} from '@angular/material/radio';
     FormsModule,
     ReactiveFormsModule,
     MatRadioModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

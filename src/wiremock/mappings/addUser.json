@@ -1,13 +1,12 @@
 {
     "request": {
-        "method": "GET",
+        "method": "POST",
         "url": "/api/users"
     },
     "response": {
         "status": 200,
         "bodyFileName": "userList.json",
         "headers": {
-            
             "Content-Type" : "application/json",
  "Access-Control-Allow-Origin" : "*",
  "Access-Control-Allow-Methods" : "*",

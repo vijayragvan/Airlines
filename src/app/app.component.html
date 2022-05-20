@@ -12,16 +12,6 @@
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-    <!-- <img
-      class="avatar mat-elevation-z8"
-      src="https://source.unsplash.com/c_GmwfHBDzk/200x200"
-    />
-
-    <h4 class="name">John Smith</h4>
-    <p class="designation">Software Engineer</p>
-
-    <mat-divider></mat-divider> -->
-
     <button mat-button class="menu-button" routerLink="/home">
       <mat-icon>home</mat-icon>
       <span>Home</span>
@@ -30,7 +20,12 @@
       <mat-icon>event</mat-icon>
       <span>View Tickets</span>
     </button>
-    <button mat-button class="menu-button" routerLink="/bookings" [queryParams] = "{role:'ADMIN'}">
+    <button
+      mat-button
+      class="menu-button"
+      routerLink="/bookings"
+      [queryParams]="{ role: 'ADMIN' }"
+    >
       <mat-icon>receipt</mat-icon>
       <span>Ticket Request</span>
     </button>
@@ -63,6 +58,10 @@
     <button mat-button class="menu-button" routerLink="/register">
       <mat-icon>help</mat-icon>
       <span>Register</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/users">
+      <mat-icon>help</mat-icon>
+      <span>Manage user</span>
     </button>
   </mat-sidenav>
   <mat-sidenav-content>
