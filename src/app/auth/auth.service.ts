@@ -10,7 +10,8 @@ export class AuthService {
 
     const token = localStorage.getItem('token'); 
 
-    return token;
+    // return token;
+    return true;
 
   }
 }

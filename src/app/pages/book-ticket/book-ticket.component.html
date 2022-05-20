@@ -4,105 +4,64 @@
             <h1>Booking Information</h1>
         </div>
     </div>
-    <div class="row mb-3">
-        <div class="col-2">From:</div>
-        <div class="col"><input [disabled]="true" class="form-control" type="text">
+    <div class="row mb-5" *ngIf="requestDetails">
+        <div class="col" >
+            <span class="material-icons">
+                flight_takeoff
+                </span>
+                 {{requestDetails.from}}
         </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col-2">To:</div>
-        <div class="col"><input [disabled]="true" class="form-control" type="text">
-        </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col-2">Departure:</div>
-        <div class="col"><input [disabled]="true" class="form-control" type="date">
-        </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col-2">Arivel:</div>
-        <div class="col"><input [disabled]="true" class="form-control" type="date">
-        </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col-2">Adults</div>
         <div class="col">
-            <select class="form-select">
-
-                <option value="one">1</option>
-
-                <option value="two">2</option>
-
-                <option value="three">3</option>
-
-                <option value="four">4</option>
-
-                <option value="five">5</option>
-
-                <option value="six">6</option>
-
-                <option value="seven">7</option>
-
-                <option value="eight">8</option>
-
-                <option value="nine">9</option>
-
-            </select>
-
+            <span class="material-icons">
+                connecting_airports
+                </span>
         </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col-2">Children</div>
         <div class="col">
-
-            <select class="form-select">
-
-                <option value="zero">0</option>
-
-                <option value="one">1</option>
-
-                <option value="two">2</option>
-
-                <option value="three">3</option>
-
-                <option value="four">4</option>
-
-                <option value="five">5</option>
-
-                <option value="six">6</option>
-
-                <option value="seven">7</option>
-
-                <option value="eight">8</option>
-
-                <option value="nine">9</option>
-
-            </select>
-
+            <span class="material-icons">
+                flight_land
+                </span> {{requestDetails.to}}
         </div>
     </div>
-    <div class="row mb-3">
-        <div class="col-2"> Class</div>
+    <div class="row mb-1">
         <div class="col">
-
-            <select class="form-select">
-
-                <option value="Economy">Economy</option>
-
-                <option value="Executive">Executive</option>
-
-                <option value="First">First</option>
-
-            </select>
-
+            <h4>Adults Info</h4>
         </div>
-
+    </div>
+    <div class="row mb-3" *ngFor="let detail of adults; let i = index">
+        <div class="col">
+            <select [(ngModel)]="adults[i]['title']" class="form-select">
+                <option value="mr">Mr</option>
+                <option value="mrs">Mrs</option>
+                <option value="ms">Ms</option>
+            </select>
+        </div>
+        <div class="col"><input [(ngModel)]="adults[i]['firstName']" class="form-control" type="text">
+        </div>
+        <div class="col"><input [(ngModel)]="adults[i]['lastName']" class="form-control" type="text">
+        </div>
     </div>
 
-
+    <div class="row mb-1">
+        <div class="col">
+            <h4>Children Info</h4>
+        </div>
+    </div>
+    <div class="row mb-3" *ngFor="let detail of children; let i = index">
+        <div class="col">
+            <select [(ngModel)]="children[i]['title']" class="form-select">
+                <option value="mr">Mr</option>
+                <option value="mrs">Mrs</option>
+                <option value="ms">Ms</option>
+            </select>
+        </div>
+        <div class="col"><input [(ngModel)]="children[i]['firstName']" class="form-control" type="text">
+        </div>
+        <div class="col"><input [(ngModel)]="children[i]['lastName']" class="form-control" type="text">
+        </div>
+    </div>
 
     <div class="row">
-        <div class="col"><input type="button" class="btn btn-success" value="Request Ticket Now"></div>
+        <div class="col"><input type="button" (click)="request()" class="btn btn-success" value="Request Ticket Now"></div>
     </div>
 
 </div>
