@@ -126,7 +126,7 @@ export class SearchTicketsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  bookingInfo() {
+  bookingInfo(element:any) {
     this.searchQuery = {
       from: this.selectedFrom, 
       to: this.selectedTo, 
@@ -135,7 +135,8 @@ export class SearchTicketsComponent implements OnInit {
       adults: this.adults, 
       departureDate: this.departureDate.value, 
       returnDate: this.trip == 'ONEWAY' ? null : this.returnDate.value,
-      trip: this.trip
+      trip: this.trip,
+      airline: element.airline
     }
     this.ticketBooikingService.setTicketSearchQuery(this.searchQuery);
     console.log(this.ticketBooikingService.getTicketSearchQuery());

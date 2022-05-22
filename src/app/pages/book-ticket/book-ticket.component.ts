@@ -22,8 +22,6 @@ export class BookTicketComponent implements OnInit {
       for(let i=0;i<Number(this.requestDetails.children);i++){
         this.children.push({title:"",firstName:"",lastName:""})
       }
-      // this.adults = Array(Number(this.requestDetails.adults)).map((x,i)=>( {title:"",firstName:"",lastName:""}));
-      // this.children = Array(Number(this.requestDetails.children)).map((x,i)=>( {title:"",firstName:"",lastName:""}));
       console.log(this.adults);
       console.log(this.children);
     } else {
@@ -34,6 +32,8 @@ export class BookTicketComponent implements OnInit {
   request(){
     console.log(this.adults);
       console.log(this.children);
+      this.router.navigate(['/bookings'], { });
+      
   }
 
 }
